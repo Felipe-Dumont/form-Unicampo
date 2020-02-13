@@ -40,9 +40,9 @@ label {
 }
 
 .formulario {
-    margin-top: 10px;
+    margin-top: 20px;
     width: 70%;
-    height: 580px;
+    height: 530px;
     border-radius: 10px;
     background-color: #FAF0FF;
     align-items: center;
@@ -53,10 +53,6 @@ label {
     overflow: hidden;
 }
 
-/* .d-botao {
-    display: flex;
-    justify-content: flex-end;
-} */
 
 .botao {
     height: 50px;
@@ -83,12 +79,6 @@ label {
     }
 }
 
-.senha,
-.email {
-    color: #457D49;
-    font-size: 20px;
-}
-
 .senha {
     animation-name: moveSenha;
     animation-duration: 500ms;
@@ -108,7 +98,7 @@ label {
     }
 }
 
-.email {
+.entrada {
     animation-name: moveEmail;
     animation-duration: 500ms;
     animation-fill-mode: forwards;

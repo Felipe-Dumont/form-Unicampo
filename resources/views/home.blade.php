@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('site/css/style.css') }}">
 
 </head>
-<body class="corpo" onload="mouse();">
+<body class="corpo">
 
 	<div class="form text-center">
 
@@ -20,7 +20,7 @@
 
 	<div class="container formulario">
 		
-		<form  >
+		<form>
 
 			<div class="al">
 
@@ -28,7 +28,7 @@
 
 					<p><b>Informações pessoais</b></p><br>
 
-					<div class="form-group">
+					<div class="form-group entrada">
 					
 						<label>Nome completo</label>
 
@@ -37,7 +37,7 @@
 					</div>
 					
 					
-					<div class="form-group">
+					<div class="form-group entrada">
 					
 						<label>Data de nascimento</label>
 
@@ -45,32 +45,29 @@
 
 					</div>
 
-					<div class="form-group">
-						<div>
-							<label >Pessoa</label>
+					<div class="form-row entrada">
+
+						<div class="form-group col-md-4">
+
+							<label for="inputState">Pessoa</label>
+							<select id="inputState" class="form-control">
+								<option selected>Fisica</option>
+								<option>Jurídica</option>
+							</select>
+
 						</div>
 
-						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-							<label class="form-check-label" for="inlineRadio1">Fisica</label>
-						</div>
-							
-						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-							<label class="form-check-label" for="inlineRadio2">Jurídica</label>
+						<div class="form-group col-md-8">
+						
+							<label>CPF/CNPJ</label>
+
+							<input type="text" id="cpfcnpj" class="form-control">
+
 						</div>
 
 					</div>
 
-					<div class="form-group">
-					
-						<label>CPF/CNPJ</label>
-
-						<input type="text" id="cpfcnpj" class="form-control">
-
-					</div>
-
-					<div class="form-group email">
+					<div class="form-group entrada">
 
 						<label >E-mail</label>
 
@@ -86,7 +83,7 @@
 
 					<p><b>Endereço</b></p><br>
 					
-					<div class="form-group">
+					<div class="form-group entrada">
 					
 						<label>CEP</label>
 
@@ -94,7 +91,7 @@
 
 					</div>
 
-					<div class="form-row">
+					<div class="form-row entrada">
 
 						<div class="form-group col-md-9">
 					
@@ -114,7 +111,7 @@
 
 					</div>
 
-					<div class="form-row">
+					<div class="form-row entrada">
 
 						<div class="form-group col-md-9">
 					
