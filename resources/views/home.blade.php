@@ -14,35 +14,137 @@
 
 	<div class="form text-center">
 
-		<h1>Enter the Login</h1>
+		<h1>Fomulário</h1>
 
 	</div>
 
 	<div class="container formulario">
 		
-		<form>
+		<form  >
 
-	 		<div class="form-group email">
+			<div class="al">
 
-	    		<label for="exampleInputEmail1">Email</label>
+				<div class="es">
 
-	    		<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"">
+					<p><b>Informações pessoais</b></p><br>
 
-	 		</div>
+					<div class="form-group">
+					
+						<label>Nome completo</label>
 
-		  	<div class="form-group senha">
+						<input type="text" class="form-control">
 
-		    	<label for="exampleInputPassword1">Senha</label>
+					</div>
+					
+					
+					<div class="form-group">
+					
+						<label>Data de nascimento</label>
 
-		    	<input type="password" class="form-control" id="exampleInputPassword1">
+						<input type="date" class="form-control">
 
-	  		</div>
+					</div>
 
-	  		<div class="text-center">
+					<div class="form-group">
+						<div>
+							<label >Pessoa</label>
+						</div>
 
-	  			<button type="submit" class="btn btn-lg botao">Login</button>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+							<label class="form-check-label" for="inlineRadio1">Fisica</label>
+						</div>
+							
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+							<label class="form-check-label" for="inlineRadio2">Jurídica</label>
+						</div>
 
-	  		</div>
+					</div>
+
+					<div class="form-group">
+					
+						<label>CPF/CNPJ</label>
+
+						<input type="text" id="cpfcnpj" class="form-control">
+
+					</div>
+
+					<div class="form-group email">
+
+						<label >E-mail</label>
+
+						<input type="email" class="form-control">
+
+					</div>
+
+				</div>
+	
+				<div class="linha-vertical"></div>
+
+				<div class="es">
+
+					<p><b>Endereço</b></p><br>
+					
+					<div class="form-group">
+					
+						<label>CEP</label>
+
+						<input type="text" class="form-control">
+
+					</div>
+
+					<div class="form-row">
+
+						<div class="form-group col-md-9">
+					
+							<label>Rua</label>
+
+							<input type="text" class="form-control">
+
+						</div>
+
+						<div class="form-group col-md-3">
+					
+							<label>Numero</label>
+
+							<input type="text" class="form-control">
+
+						</div>
+
+					</div>
+
+					<div class="form-row">
+
+						<div class="form-group col-md-9">
+					
+							<label>Cidade</label>
+
+							<input type="text" class="form-control">
+
+						</div>
+
+						<div class="form-group col-md-3">
+						
+							<label>UF</label>
+
+							<input type="text" class="form-control">
+
+						</div>
+
+					</div>
+
+					<div class="text-center d-botao" style="margin-top: 70px;">
+
+					<button type="submit" class="btn btn-lg botao">Cadastrar!</button>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
 
 		</form>
 
