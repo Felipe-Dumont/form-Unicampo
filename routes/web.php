@@ -12,5 +12,26 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    return view('home');
 });
+
+
+// Route::group(['namespace' => 'Form'], function () {
+
+/**
+ * VERBO GET
+ */
+
+/**
+ * VERBO POST
+ */
+
+/**
+ * VERBO PUT/PATCH
+ */
+
+/**
+ * VERBO DELETE
+ */
+// });

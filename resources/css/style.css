@@ -1,0 +1,152 @@
+body {
+	background-color: #37008A;
+	overflow: hidden;
+}
+.form {
+	padding: 20px;
+	color: #FAF0FF;
+	margin-top: 20px;
+}
+h1 {
+	font-size: 47px;
+}
+.formulario {
+	margin-top: 30px;
+	width: 347px;
+	height: 325px;
+	border-radius: 10px;
+	background-color: #FAF0FF;
+	align-items: center;
+	justify-content: center;
+	padding: 30px;
+	animation-name: fade;
+	animation-duration: 700ms;
+	overflow: hidden;
+}
+.botao {
+	margin-top: 15px;
+	border-radius: 15px;
+	padding: 2px;
+	padding-right:60px;
+	padding-left: 60px;
+	color: #FAF0FF;
+	background-color: #37008A;
+	animation-name: moveboton;
+	animation-duration: 500ms;
+	animation-fill-mode: backwards;
+}
+
+@keyframes moveboton {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+		} 
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.senha, .email {
+	color: #37008A;
+	font-size: 20px;
+}
+
+.senha {
+	animation-name: moveSenha;
+	animation-duration: 500ms;
+	animation-delay: 200ms;
+	animation-fill-mode: backwards;
+}
+
+@keyframes moveSenha {
+	from {
+		opacity: 0;
+		transform: translateX(40%);
+		} 
+	to {
+		opacity: 1;
+		transform: translateX(0%);
+	}
+}
+
+.email {
+	animation-name: moveEmail;
+	animation-duration: 500ms;
+	animation-fill-mode: forwards;
+}
+
+@keyframes moveEmail {
+	from {
+		opacity: 0;
+		transform: translateX(-80%);
+		} 
+	to {
+		opacity: 1;
+		transform: translateX(0%);
+	}
+}
+
+.form-hide {
+	animation: down 500ms forwards;
+	animation-timing-function: ease-in;
+}
+
+@keyframes down {
+	from{
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(100vh);
+	}
+}
+
+.validate-error {
+	animation: nono 500ms, fade paused;
+}
+
+@keyframes nono {
+	0%, 100% {
+		transform: translateX(0);
+	}
+	20%, 60% {
+		transform: translateX(-5%);
+	}
+	40%, 80% {
+		transform: translateX(5%);
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+		transform: scale(0.8);
+		} 
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.squares li {
+	background-color: rgba(255, 255, 255, 0.15);
+	display: block;
+	position: absolute;
+	bottom: -40px;
+	border-radius: 5px;
+	animation: up 2s infinite;
+	animation-direction: alternate;
+}
+
+@keyframes up {
+	from {
+		opacity: 0;
+		transform: translateY(0);
+	}
+	50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		transform: translateY(-600px) rotate(960deg);
+	}
+}
