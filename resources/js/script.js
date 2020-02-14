@@ -2,7 +2,6 @@ const btnLogin = document.querySelector(".botao");
 const form = document.querySelector("div.formulario");
 
 btnLogin.addEventListener("click", event => {
-    event.preventDefault();
 
     const fields = [...document.querySelectorAll(".form-control")];
 
@@ -23,6 +22,7 @@ btnLogin.addEventListener("click", event => {
     } else {
         form.classList.add("form-hide");
     }
+
 });
 
 const ulSquares = document.querySelector("ul.squares");

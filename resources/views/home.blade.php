@@ -85,7 +85,9 @@
 
 	<div class="container formulario">
 		
-		<form >
+	<form action="{{ route('create') }}" method="POST">
+
+			@csrf
 
 			<div class="al">
 
@@ -97,16 +99,15 @@
 					
 						<label>Nome completo</label>
 
-						<input type="text" name="fullname" class="form-control">
+						<input type="text" name="fullname" class="form-control ">
 
 					</div>
-					
 					
 					<div class="form-group entrada">
 					
 						<label>Data de nascimento</label>
 
-						<input type="date" name="birth" class="form-control">
+						<input type="date" name="birth" class="form-control ">
 
 					</div>
 
@@ -116,7 +117,8 @@
 						
 							<label>CPF/CNPJ</label>
 
-							<input type="text" name="cpf-cnpj" id="cpfcnpj" onkeypress='mascaraMutuario(this,cpfCnpj)' onkeyup='validaCampo()' onblur='clearTimeout()' class="form-control">
+							<input type="text" name="cpfcnpj" id="cpfcnpj" onkeypress='mascaraMutuario(this,cpfCnpj)' onkeyup='validaCampo()' onblur='clearTimeout()' class="form-control ">
+
 
 						</div>
 
@@ -125,8 +127,8 @@
 							<label for="inputState">Pessoa</label>
 							<select id="cpf-cnpj" onkeyup='validaCampo()' name="pessoa" class="form-control">
 								<option value="0" selected>...</option>
-								<option value="1" >Fisica</option>
-								<option value="2" >Jurídica</option>
+								<option value="Fisica" >Fisica</option>
+								<option value="Juridica" >Jurídica</option>
 							</select>
 
 						</div>
@@ -138,13 +140,12 @@
 						<label for="email" >E-mail</label>
 
 						<input type="email" name="email" class="form-control">
+	
 
 					</div>
 
 				</div>
 
-				
-	
 				<div class="linha-vertical"></div>
 
 				<div class="es">
@@ -157,6 +158,7 @@
 
 						<input type="text" id="cep" name="cep" class="form-control">
 
+
 					</div>
 
 					<div class="form-row entrada">
@@ -167,6 +169,7 @@
 
 							<input type="text" id="rua" name="street" class="form-control">
 
+
 						</div>
 
 						<div class="form-group col-md-3">
@@ -174,6 +177,7 @@
 							<label>Numero</label>
 
 							<input type="text" name="number" class="form-control">
+
 
 						</div>
 
@@ -199,16 +203,16 @@
 
 					</div>
 
-					<div class="text-center d-botao" style="margin-top: 70px;">
+					<div class="text-center d-botao" style="margin-top: 50px;">
 
-					<button type="submit" class="btn btn-lg botao">Cadastrar!</button>
+						<button type="submit" class="btn btn-lg botao">Cadastrar!</button>
 
 					</div>
 
 				</div>
 
 			</div>
-			<div><p style="font-size: 11px">Todos os campos são Obrigatorios!</p></div>
+			<div><p style="font-size: 11px"><b>Todos os campos são Obrigatorios!</b></p></div>
 
 		</form>
 
@@ -280,9 +284,9 @@
 				var teste2 = teste.length;
 
 				if(teste2 <= 14) {
-					document.getElementById("cpf-cnpj").value = "1";
+					document.getElementById("cpf-cnpj").value = "Fisica";
 				} else {
-					document.getElementById("cpf-cnpj").value = "2";
+					document.getElementById("cpf-cnpj").value = "Juridica";
 				}
 			}
 

@@ -11,21 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-
-    return view('home');
-});
-
-
-// Route::group(['namespace' => 'Form'], function () {
-
 /**
  * VERBO GET
  */
 
+Route::get('/', function () {
+    return view('home');
+});
+
 /**
  * VERBO POST
  */
+Route::post('/registrar', 'FormController@create')->name('create');
 
 /**
  * VERBO PUT/PATCH
@@ -34,4 +31,3 @@ Route::get('/', function () {
 /**
  * VERBO DELETE
  */
-// });
