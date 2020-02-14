@@ -2,27 +2,23 @@ const btnLogin = document.querySelector(".botao");
 const form = document.querySelector("div.formulario");
 
 btnLogin.addEventListener("click", event => {
-
-    const fields = [...document.querySelectorAll(".form-control")];
+    const fields = [...document.querySelectorAll(".form-group input")];
 
     fields.forEach(fields => {
-        if (fields.value === "") {
-            form.classList.add("validate-error");
-        }
+        if (fields.value === "") form.classList.add("validate-error");
     });
 
     const formError = document.querySelector(".validate-error");
 
     if (formError) {
-        formError.addEventListener("animetionend", event => {
+        formError.addEventListener("animationend", event => {
             if (event.animationName === "nono") {
-                formError.classList.remove(".validate-error");
+                formError.classList.remove("validate-error");
             }
         });
     } else {
         form.classList.add("form-hide");
     }
-
 });
 
 const ulSquares = document.querySelector("ul.squares");
@@ -52,5 +48,4 @@ for (let i = 0; i < 10; i++) {
     li.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
 
     ulSquares.appendChild(li);
-
 }

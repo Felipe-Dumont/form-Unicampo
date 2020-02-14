@@ -71,7 +71,7 @@
                     limpa_formulário_cep();
                 }
             });
-        });
+		});
 </script>
 
 </head>
@@ -82,6 +82,8 @@
 		<h1>Fomulário</h1>
 
 	</div>
+
+
 
 	<div class="container formulario">
 		
@@ -99,7 +101,7 @@
 					
 						<label>Nome completo</label>
 
-						<input type="text" name="fullname" class="form-control ">
+						<input type="text" name="fullname" value="{{ old('fullname') }}" class="form-control final" required>
 
 					</div>
 					
@@ -107,7 +109,7 @@
 					
 						<label>Data de nascimento</label>
 
-						<input type="date" name="birth" class="form-control ">
+						<input type="date" name="birth" value="{{ old('birth') }}" class="form-control " required>
 
 					</div>
 
@@ -117,7 +119,7 @@
 						
 							<label>CPF/CNPJ</label>
 
-							<input type="text" name="cpfcnpj" id="cpfcnpj" onkeypress='mascaraMutuario(this,cpfCnpj)' onkeyup='validaCampo()' onblur='clearTimeout()' class="form-control ">
+							<input type="text" name="cpfcnpj" id="cpfcnpj" onkeypress='mascaraMutuario(this,cpfCnpj)' onkeyup='validaCampo()' onblur='clearTimeout()' value="{{ old('cpfcnpj') }}" class="form-control" required>
 
 
 						</div>
@@ -139,7 +141,7 @@
 
 						<label for="email" >E-mail</label>
 
-						<input type="email" name="email" class="form-control">
+						<input type="email" name="email" value="{{ old('email') }}" class="form-control" required>
 	
 
 					</div>
@@ -156,7 +158,7 @@
 					
 						<label>CEP</label>
 
-						<input type="text" id="cep" name="cep" class="form-control">
+						<input type="text" id="cep" name="cep" class="form-control" required>
 
 
 					</div>
@@ -167,7 +169,7 @@
 					
 							<label>Rua</label>
 
-							<input type="text" id="rua" name="street" class="form-control">
+							<input type="text" id="rua" name="street" class="form-control" required>
 
 
 						</div>
@@ -176,7 +178,7 @@
 					
 							<label>Numero</label>
 
-							<input type="text" name="number" class="form-control">
+							<input type="text" name="number" value="{{ old('number') }}" class="form-control" required>
 
 
 						</div>
@@ -189,7 +191,7 @@
 					
 							<label>Cidade</label>
 
-							<input type="text" id="cidade" name="city" class="form-control">
+							<input type="text" id="cidade" name="city" class="form-control" required>
 
 						</div>
 
@@ -197,15 +199,32 @@
 						
 							<label>UF</label>
 
-							<input type="text" id="uf"	name="state" class="form-control">
+							<input type="text" id="uf"	name="state" class="form-control" required>
 
 						</div>
 
 					</div>
 
-					<div class="text-center d-botao" style="margin-top: 50px;">
+					<div class="text-center d-botao" style="margin-top: 30px;">
 
 						<button type="submit" class="btn btn-lg botao">Cadastrar!</button>
+
+						@foreach (['danger', 'warning', 'success', 'info'] as $msg)
+							@if(Session::has('alert-' . $msg))
+
+							<p  style="margin-top: 30px;" class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="fechar">&times;</a></p>
+							@endif
+						@endforeach	
+						
+						 @if($errors->all())
+
+								@foreach($errors->all() as $error)
+									<div class="alert alert-danger" style="margin-top: 30px;" role="alert">
+										{{ $error }}
+									</div>
+								@endforeach
+
+							@endif
 
 					</div>
 
@@ -226,7 +245,6 @@
 	<footer>
 
 		<script type="text/javascript" src="{{ asset('site/js/bootstrap.js') }}"></script>
-
 		<script type="text/javascript" src="{{ asset('site/js/script.js') }}"></script>
 
 		<script>

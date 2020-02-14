@@ -24,7 +24,19 @@ class FormController extends Controller
             $user->cpf = "--";
         }
 
-        $user->save();
+        if (
+            $request->fullname != '' &&
+            $request->birth != '' &&
+            $request->email != '' &&
+            $request->pessoa != ''
+        ) {
+            $user->save();
+
+            $request->session()->flash('alert-success', 'Cadastro realizado com sucesso!');
+            return redirect()->route('home');
+        } else {
+            return \redirect()->back()->withInput()->withErrors(['Todos os campos são obrigatorios!']);
+        }
 
         $address = new Addresses();
         $address->cep = $request->cep;
@@ -34,11 +46,19 @@ class FormController extends Controller
         $address->city = $request->city;
         $address->state = $request->state;
 
-        $address->save();
+        if (
+            $request->cep != '' &&
+            $request->street != '' &&
+            $request->number != '' &&
+            $request->city != '' &&
+            $request->state != ''
+        ) {
+            $address->save();
 
-
-        // var_dump($request->only('pessoa'));
-
-        // dd($request->all());
+            $request->session()->flash('alert-success', 'Cadastro realizado com sucesso!');
+            return redirect()->route('home');
+        } else {
+            return \redirect()->back()->withInput()->withErrors(['Todos os campos são obrigatorios!']);
+        }
     }
 }
