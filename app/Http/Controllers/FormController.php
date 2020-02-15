@@ -10,6 +10,20 @@ class FormController extends Controller
 {
     public function create(Request $request)
     {
+
+        $validacao = $request->validate([
+            'fullname' => 'required',
+            'birth' => 'required',
+            'email' => 'required|email',
+            'pessoa' => 'required',
+            'cpfcnpj' => 'required',
+            'cep' => 'required',
+            'street' => 'required',
+            'number' => 'required',
+            'city' => 'required',
+            'state' => 'required'
+        ]);
+
         $user = new User();
         $user->fullname = $request->fullname;
         $user->birth = $request->birth;
@@ -24,41 +38,41 @@ class FormController extends Controller
             $user->cpf = "--";
         }
 
+
+
         if (
-            $request->fullname != '' &&
-            $request->birth != '' &&
-            $request->email != '' &&
-            $request->pessoa != ''
+            $request->fullname === '' &&
+            $request->birth === '' &&
+            $request->email === '' &&
+            $request->pessoa === ''
         ) {
+            return \redirect()->back()->withInput()->withErrors(['Todos os campos são obrigatorios!']);
+        } else {
+
             $user->save();
 
-            $request->session()->flash('alert-success', 'Cadastro realizado com sucesso!');
-            return redirect()->route('home');
-        } else {
-            return \redirect()->back()->withInput()->withErrors(['Todos os campos são obrigatorios!']);
-        }
+            $address = new Addresses();
+            $address->cep = $request->cep;
+            $address->iduser = $user->id;
+            $address->street = $request->street;
+            $address->number = $request->number;
+            $address->city = $request->city;
+            $address->state = $request->state;
 
-        $address = new Addresses();
-        $address->cep = $request->cep;
-        $address->iduser = $user->id;
-        $address->street = $request->street;
-        $address->number = $request->number;
-        $address->city = $request->city;
-        $address->state = $request->state;
+            if (
+                $request->cep === '' &&
+                $request->street === '' &&
+                $request->number === '' &&
+                $request->city === '' &&
+                $request->state === ''
+            ) {
+                return \redirect()->back()->withInput()->withErrors(['Todos os campos são obrigatorios!']);
+            } else {
 
-        if (
-            $request->cep != '' &&
-            $request->street != '' &&
-            $request->number != '' &&
-            $request->city != '' &&
-            $request->state != ''
-        ) {
-            $address->save();
-
-            $request->session()->flash('alert-success', 'Cadastro realizado com sucesso!');
-            return redirect()->route('home');
-        } else {
-            return \redirect()->back()->withInput()->withErrors(['Todos os campos são obrigatorios!']);
+                $address->save();
+                $request->session()->flash('alert-success', 'Cadastro realizado com sucesso!');
+                return redirect()->route('home');
+            }
         }
     }
 }

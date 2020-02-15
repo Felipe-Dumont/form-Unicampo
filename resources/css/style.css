@@ -82,7 +82,7 @@ label {
     animation-name: move;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
-    animation-delay: 150ms;
+    animation-delay: 100ms;
 }
 
 @keyframes move {

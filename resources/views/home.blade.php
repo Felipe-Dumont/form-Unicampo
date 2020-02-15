@@ -79,7 +79,7 @@
 
 	<div class="form text-center">
 
-		<h1>Fomulário</h1>
+		<h1>Formulário</h1>
 
 	</div>
 
@@ -264,7 +264,7 @@
 				//Remove tudo o que não é dígito
 				v=v.replace(/\D/g,"")
 
-				if (v.length <= 14) { //CPF
+				if (v.length <= 13) { //CPF
 
 					//Coloca um ponto entre o terceiro e o quarto dígitos
 					v=v.replace(/(\d{3})(\d)/,"$1.$2")
@@ -278,7 +278,7 @@
 
 					
 
-				} else { //CNPJ
+				} else  { //CNPJ
 
 					//Coloca ponto entre o segundo e o terceiro dígitos
 					v=v.replace(/^(\d{2})(\d)/,"$1.$2")
