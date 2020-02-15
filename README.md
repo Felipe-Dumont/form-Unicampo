@@ -1,78 +1,65 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+#Formulario de cadastro
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+### DESCRIÇÂO :
 
-## About Laravel
+#### Projeto usando Framework Laravel, com HTML, CSS, JS, JQUERY, BOOTSTRAP.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#### formulario com verificação de input vazio no front-end, e verificação de padão no back-end
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Campos do formulario
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   nome completo
+-   data de nascimento
+-   tipo pessoa (Fisica/Juridica)
+-   CPF/CNPJ
+-   email
+-   CEP
+-   Rua
+-   Numero da rua
+-   cidade
+-   UF
 
-## Learning Laravel
+### PASSOS NECESSARIOS PARA QUE POSSA CLONAR O PROJETO E RODAR NA SUA MAQUINA
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Baixar e instalar
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. PHP 7.2 ou + (Eu Recomendo a utilização do XAMPP para facilitar o processo)(será necessario ter o php instalado no path - para verificar se no seu já esta, utilize o comando 'php -version' Para saber se ja esta configurado corretamente).
+2. GIT
+3. COMPOSER
 
-## Laravel Sponsors
+#### PRIMEIROS PASSOS
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1. Navegue em seus diretorios até a pasta que deseja criar o projeto.
+2. Com o git instalado na maquina clique com o botão direito em qualquer lugar e selecione 'Git Bash Here'
+3. copie o comando a seguir e cole na janela cmd
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+```
+git clone https://github.com/Felipe-Dumont/form-Unicampo.git
+```
 
-## Contributing
+4. Espere o download do projeto ser feito e logo apos utilize o camando 'cd form-unicampo' para entrar na pasta do porjeto
+5. Você precisará de um editor de codigo para editar o arquivo .env, para configurar os parametros do banco de dados (Lembrando que o banco de dados usado é o MySql).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nomeDoBancoDeDados
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Code of Conduct
+6.Depois de configurar os parametros para acessar o banco de dados local, Utilize o comando a baixo no cmd aberto para rodas as 'migrations' do projeto (as migrations é onde esta a configuração para criar e configurar todas tabelas no banco de dados).
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+php artisan migration fresh
+```
 
-## Security Vulnerabilities
+7. Depois utlize o script do link ----- para popular as tabelas do banco de dados com 50 registros.
+8. Agora basta utilizar o comando abaixo no cmd para rodar um servidor local na porta '8000'
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
+```
+php artisan serve
+```
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
