@@ -1,10 +1,10 @@
-#Formulario de cadastro
+# Formulario de cadastro
 
 ### DESCRIÇÂO :
 
 #### Projeto usando Framework Laravel, com HTML, CSS, JS, JQUERY, BOOTSTRAP.
 
-#### formulario com verificação de input vazio no front-end, e verificação de padão no back-end
+#### formulario com auto complete do endereço com baso no CEP, seleciona o tipo de pessoa com base no CPF/CNPJ digitado e verificação de input vazio no front-end, e verificação de padão no back-end.
 
 ### Campos do formulario
 
