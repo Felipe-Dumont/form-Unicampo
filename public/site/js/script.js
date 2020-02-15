@@ -10,6 +10,7 @@ btnLogin.addEventListener("click", event => {
 
     const formError = document.querySelector(".validate-error");
 
+
     if (formError) {
         formError.addEventListener("animationend", event => {
             if (event.animationName === "nono") {

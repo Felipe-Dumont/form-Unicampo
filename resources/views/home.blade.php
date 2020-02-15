@@ -128,7 +128,7 @@
 
 							<label for="inputState">Pessoa</label>
 							<select id="cpf-cnpj" onkeyup='validaCampo()' name="pessoa" class="form-control">
-								<option value="0" selected>...</option>
+								<option value="" selected>...</option>
 								<option value="Fisica" >Fisica</option>
 								<option value="Juridica" >Jurídica</option>
 							</select>
@@ -141,7 +141,7 @@
 
 						<label for="email" >E-mail</label>
 
-						<input type="email" name="email" value="{{ old('email') }}" class="form-control" required>
+						<input type="text" name="email" value="{{ old('email') }}" class="form-control" required>
 	
 
 					</div>

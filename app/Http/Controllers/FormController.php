@@ -5,24 +5,12 @@ namespace App\Http\Controllers;
 use App\Addresses;
 use App\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\FomularioRequest;
 
 class FormController extends Controller
 {
-    public function create(Request $request)
+    public function create(FomularioRequest $request)
     {
-
-        $validacao = $request->validate([
-            'fullname' => 'required',
-            'birth' => 'required',
-            'email' => 'required|email',
-            'pessoa' => 'required',
-            'cpfcnpj' => 'required',
-            'cep' => 'required',
-            'street' => 'required',
-            'number' => 'required',
-            'city' => 'required',
-            'state' => 'required'
-        ]);
 
         $user = new User();
         $user->fullname = $request->fullname;
@@ -37,8 +25,6 @@ class FormController extends Controller
             $user->cnpj = $request->cpfcnpj;
             $user->cpf = "--";
         }
-
-
 
         if (
             $request->fullname === '' &&
