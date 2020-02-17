@@ -72,4 +72,22 @@ php artisan serve
 
 ### Segue um script para popular o banco de dados. [Script thirty contacts](https://github.com/Felipe-Dumont/form-Unicampo/blob/master/populacaoBD/thirty_bd_contacts.sql).
 
+## Documentação API
+
+##### usuario
+
+-   `http://127.0.0.1:8000/api/user` - (_VERBO GET_) - Lista todos os usuarios.
+-   `http://127.0.0.1:8000/api/user/1` - (_VERBO GET_) - Lista Apenas o usuario com id igual 1.
+-   `http://127.0.0.1:8000/api/user?fullname=Nome Completo&birth=2000-02-08&kindperson=fisica&cpf=222.111.111-11&cnpj=--&email=email123@teste.com/` - (_VERBO POST_) - Cria um novo registro de usuario. _Os parametros são: **fullname, birth, kindperson, cpf, cnpj, email**_
+-   `http://127.0.0.1:8000/api/user/1?fullname=mudando o nome` - (_VERBO PUT_) - Fazer alterações nos dados do usuario já existente. _**Qualquer parametro pode ser passo e mudado**_.
+-   `http://127.0.0.1:8000/api/user/1` - (_VERBO DELETE_) - Deleta o usuario com id igual a 1.
+
+##### Endereço
+
+-   `http://127.0.0.1:8000/api/address` - (_VERBO GET_) - Lista todos os endereços.
+-   `http://127.0.0.1:8000/api/address/1` - (_VERBO GET_) - Lista Apenas o endereço com id igual 1.
+-   `http://127.0.0.1:8000/api/address?iduser=1&cep=01001001&street=Praça da Sé&number=10&state=SP` - (_VERBO POST_) - Cria um novo registro de endereço. _Os parametros são: **iduser(\*id de um usuario ja existente), cep, street, number, state**_
+-   `http://127.0.0.1:8000/api/address/1?street=Dario Veloso` - (_VERBO PUT_) - Fazer alterações nos dados do endereço já existente. _**Qualquer parametro pode ser passo e mudado**_.
+-   `http://127.0.0.1:8000/api/address/1` - (_VERBO DELETE_) - Deleta o registro de endereço com id igual a 1.
+
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
