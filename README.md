@@ -63,13 +63,13 @@ DB_PASSWORD=
 9. Utilize o comando abaixo no cmd aberto para rodas as _migrations_ do projeto (as migrations é onde esta a configuração para criar e configurar todas tabelas no banco de dados).
 
 ```
-php artisan make:migrate fresh
+pphp artisan migrate
 ```
 
 10. Agora basta utilizar o comando abaixo no cmd para rodar um servidor local na porta _8000_
 
 ```
-php artisan migrate
+php artisan serve
 ```
 
 ### Segue um script para popular o banco de dados. [Script thirty contacts](https://github.com/Felipe-Dumont/form-Unicampo/blob/master/populacaoBD/thirty_bd_contacts.sql).
