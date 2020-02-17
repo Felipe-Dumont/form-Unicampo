@@ -24,7 +24,7 @@ class FomularioRequest extends FormRequest
     public function rules()
     {
         return [
-            'fullname' => 'required|regex:/^[a-zA-Z ]+$/',
+            'fullname' => 'required|regex:/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/',
             'birth' => 'required',
             'email' => 'required|email',
             'pessoa' => 'required',
