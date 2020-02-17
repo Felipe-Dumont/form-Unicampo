@@ -63,7 +63,7 @@ DB_PASSWORD=
 9. Utilize o comando abaixo no cmd aberto para rodas as _migrations_ do projeto (as migrations é onde esta a configuração para criar e configurar todas tabelas no banco de dados).
 
 ```
-pphp artisan migrate
+php artisan migrate
 ```
 
 10. Agora basta utilizar o comando abaixo no cmd para rodar um servidor local na porta _8000_
